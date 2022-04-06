@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var dominosRouter = require('./routes/dominos');
-var addmodssRouter = require('./routes/addmods');
+var icemagicRouter = require('./routes/icemagic');
+var addmodsRouter = require('./routes/addmods');
 var selectorRouter = require('./routes/selector');
 
 var app = express();
@@ -24,11 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/dominos', dominosRouter);
+app.use('/icemagic', icemagicRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
